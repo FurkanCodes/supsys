@@ -15,6 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 
 connectDB();
 
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/tickets", require("./routes/ticketRoutes"));
+app.use(errorHandler);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build")); // set static folder
 
@@ -32,10 +36,6 @@ if (process.env.NODE_ENV === "production") {
 app.get("/api/users", (req, res) => {
   res.json({ message: "Welcome to the Support Desk" });
 });
-
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/tickets", require("./routes/ticketRoutes"));
-app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
