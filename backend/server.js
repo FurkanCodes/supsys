@@ -1,4 +1,5 @@
 const path = require("path");
+const { expressCspHeader, INLINE, NONE, SELF } = require("express-csp-header");
 
 const express = require("express");
 require("dotenv").config();
@@ -18,6 +19,15 @@ connectDB();
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/tickets", require("./routes/ticketRoutes"));
 app.use(errorHandler);
+
+app.use(
+  expressCspHeader({
+    directives: {
+      "default-src": [SELF],
+      "img-src": [SELF],
+    },
+  })
+);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build")); // set static folder
