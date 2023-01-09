@@ -3,7 +3,7 @@ const path = require("path");
 const express = require("express");
 require("dotenv").config();
 const colors = require("colors");
-
+const cors = require("cors");
 const app = express();
 
 const port = process.env.PORT || 9000;
@@ -12,6 +12,31 @@ const connectDB = require("./config/db");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(cors());
+app.options("*", cors());
+var allowCrossDomain = function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+};
+app.use(allowCrossDomain);
+
+const { expressCspHeader, INLINE, NONE, SELF } = require("express-csp-header");
+
+app.use(
+  expressCspHeader({
+    directives: {
+      "default-src": [NONE],
+      "script-src": [SELF, INLINE, "somehost.com"],
+      "style-src": [SELF, "mystyles.net"],
+      "img-src": [SELF],
+      "worker-src": [NONE],
+      "block-all-mixed-content": true,
+    },
+  })
+);
 
 connectDB();
 
