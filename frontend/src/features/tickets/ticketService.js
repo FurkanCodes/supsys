@@ -10,7 +10,9 @@ const createTicket = async (ticketData, token) => {
   };
 
   const response = await axios.post(API_URL, ticketData, config);
-  localStorage.setItem("ticket", JSON.stringify(response.data));
+  if (response.data) {
+    localStorage.setItem("ticket", JSON.stringify(response.data));
+  }
   return response.data;
 };
 
@@ -38,7 +40,9 @@ const getTicket = async (ticketId, token) => {
   };
 
   const response = await axios.get(API_URL + ticketId, config);
-  localStorage.setItem("ticket", JSON.stringify(response.data));
+  if (response.data) {
+    localStorage.setItem("ticket", JSON.stringify(response.data));
+  }
   return response.data;
 };
 
