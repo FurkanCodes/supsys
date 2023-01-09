@@ -1,9 +1,12 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import ticketService from "./ticketService";
+
+const ticket = JSON.parse(localStorage.getItem("ticket"));
+
 const initialState = {
   tickets: [],
-  ticket: {},
+  ticket: ticket ? ticket : null,
   isError: false,
   isSuccess: false,
   isLoading: false,
