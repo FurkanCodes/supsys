@@ -132,12 +132,12 @@ function Login() {
                 type="submit"
                 className="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  {/* <AiFillLock
+                {/* <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+                  <AiFillLock
                     className="w-5 h-5 text-indigo-500 group-hover:text-indigo-400"
                     aria-hidden="true"
-                  /> */}
-                </span>
+                  />
+                </span> */}
                 Sign in
               </button>
             </div>

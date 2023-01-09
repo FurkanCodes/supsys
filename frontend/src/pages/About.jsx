@@ -1,5 +1,8 @@
 import React from "react";
-// import { DiReact, SiTailwindcss, DiMongodb, SiExpress } from "react-icons/all";
+import { FaReact } from "react-icons/fa";
+import { SiTailwindcss, SiExpress } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
+
 function About() {
   return (
     <div className="text-center">
@@ -10,10 +13,10 @@ function About() {
       </p>
 
       <div className="inline-flex text-8xl">
-        {/* <DiReact />
+        <FaReact />
         <SiTailwindcss />
         <DiMongodb />
-        <SiExpress /> */}
+        <SiExpress />
       </div>
     </div>
   );

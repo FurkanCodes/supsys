@@ -31,16 +31,16 @@ function Tickets() {
         Tickets
       </h2>
       <div className="relative overflow-x-auto sm:rounded-lg">
-        <table className="ml-auto mr-auto text-sm text-left text-gray-500 fex dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
+        <table className="ml-auto mr-auto text-sm text-left text-gray-500 fex ">
+          <thead className="text-xs uppercase">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 bg-gray-50">
                 Date
               </th>
-              <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              <th scope="col" className="px-6 py-3 bg-gray-50 ">
                 Issue
               </th>
-              <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              <th scope="col" className="px-6 py-3 bg-gray-50 ">
                 Status
               </th>
               <th></th>
