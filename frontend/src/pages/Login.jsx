@@ -63,6 +63,8 @@ function Login() {
             <h2 className="text-3xl font-bold tracking-tight text-center text-gray-900 ">
               Login to your account
             </h2>
+          <p> email: demo@demo.com
+               password: demo1 </p>
           </div>
           <form className="mt-8 space-y-6" onSubmit={onSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
